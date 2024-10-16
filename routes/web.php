@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\DistributorController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,16 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::get('/admin-logout', [AuthController::class, 'admin_logout'])->name('admin.logout');
 
+    // Route Distributor
+    Route::get('/distributor', [DistributorController::class, 'index'])->name('admin.distributor');
+    Route::get('/distributor/create', [DistributorController::class, 'create'])->name('distributor.create');
+    Route::post('/distributor/store', [DistributorController::class, 'store'])->name('distributor.store');
+    // Distributor edit & update
+    Route::get('/distributor/edit/{id}', [DistributorController::class, 'edit'])->name('distributor.edit');
+    Route::post('/distributor/update/{id}', [DistributorController::class, 'update'])->name('distributor.update'); 
+
+    // Distributor delete
+    Route::delete('/distributor/delete/{id}', [DistributorController::class, 'delete'])->name('distributor.delete'); 
 
 })->middleware('admin');
 
