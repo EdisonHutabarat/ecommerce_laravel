@@ -51,8 +51,7 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="stock">Stok Produk</label>
-                                    <input id="stock" type="text" class="formcontrol" name="stock" required=""
-                                        value="{{ $flashsales->stock }}">
+                                    <input id="stock" type="text" class="formcontrol" name="stock" required="" value="{{ $flashsales->stock }}">
                                     <div class="invalid-feedback">
                                         Kolom ini harus di isi!
                                     </div>
