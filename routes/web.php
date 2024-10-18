@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Admin\FlashsaleController;
 // use App\Http\Controllers\ListController;
 
 // Guest Route
@@ -43,7 +44,6 @@ Route::group(['middleware' => 'admin'], function () {
     // Product delete
     Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete'); 
 
-    Route::get('/admin-logout', [AuthController::class, 'admin_logout'])->name('admin.logout');
 
     // Route Distributor
     Route::get('/distributor', [DistributorController::class, 'index'])->name('admin.distributor');
@@ -55,6 +55,17 @@ Route::group(['middleware' => 'admin'], function () {
 
     // Distributor delete
     Route::delete('/distributor/delete/{id}', [DistributorController::class, 'delete'])->name('distributor.delete'); 
+
+    // Flashsale route
+    Route::get('/admin/flashsale', [FlashsaleController::class, 'index'])->name('admin.flashsale');
+    Route::get('/flashsale/create', [FlashsaleController::class, 'create'])->name('flashsale.create');
+    Route::post('/flashsale/store', [FlashsaleController::class, 'store'])->name('flashsale.store');
+    Route::get('/flashsale/detail/{id}', [FlashsaleController::class,'detail'])->name('flashsale.detail');
+    Route::get('/flashsale/edit/{id}', [FlashsaleController::class, 'edit'])->name('flashsale.edit');
+    Route::post('/flashsale/update/{id}', [FlashsaleController::class,'update'])->name('flashsale.update');
+    Route::delete('/flashsale/delete/{id}', [FlashsaleController::class,'delete'])->name('flashsale.delete');
+
+    Route::get('/admin-logout', [AuthController::class, 'admin_logout'])->name('admin.logout');
 
 })->middleware('admin');
 

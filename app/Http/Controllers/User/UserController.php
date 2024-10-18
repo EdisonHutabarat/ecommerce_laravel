@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Flashsale;
 
 class UserController extends Controller
 {
     public function index()
     {
         $products = Product::all();
-
-        return view('pages.user.index', compact('products'));
+        $flashsales = Flashsale::where(column: 'status', operator: true)-> get();
+ 
+        return view('pages.user.index', compact('products','flashsales'));
     }
 
     public function detail_product($id)

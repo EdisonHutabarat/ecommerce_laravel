@@ -19,6 +19,10 @@
                 <a class="nav-link" href="{{ route('admin.distributor') }}">
                 <i class="fas fa-truck-moving"></i><span>Distributor</span></a>
             </li>
+            <li class="{{ Request::is('flashsale')? 'active' : ''}}">
+                <a class="nav-link" href="{{ route('admin.flashsale') }}">
+                <i class="fas fa-percentage"></i><span>Diskon</span></a>
+            </li>
         </ul>
     </aside>
 </div>
