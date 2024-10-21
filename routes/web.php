@@ -79,6 +79,8 @@ Route::group(['middleware' => 'web'], function () {
     // Product Route
     Route::get('/user/product/detail/{id}', [UserController::class, 'detail_product'])->name('user.detail.product');
     Route::get('/product/purchase/{productId}/{userId}', [UserController::class, 'purchase']);
+    Route::post('/product/purchase', [ProductController::class, 'purchaseProduct'])->name('purchase.product');
+
 
     Route::get('/user-logout', [AuthController::class, 'user_logout'])->name('user.logout');
 })->middleware('web');

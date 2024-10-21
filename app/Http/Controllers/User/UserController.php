@@ -46,4 +46,20 @@ class UserController extends Controller
         }
 
     }
+    
+    public function purchaseProduct($productId, $userId)
+{
+    // Logika pembelian produk atau Flash Sale
+    $product = Product::find($productId);
+    
+    if (!$product) {
+        return redirect()->back()->withErrors(['error' => 'Produk tidak ditemukan.']);
+    }
+
+    // Lanjutkan dengan logika pembelian (kurangi stok, tambahkan ke pembelian user, dll.)
+    
+    return redirect()->route('user.products')->with('success', 'Pembelian berhasil!');
+}
+
+
 }
