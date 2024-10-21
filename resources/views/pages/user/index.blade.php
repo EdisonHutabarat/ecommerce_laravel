@@ -39,10 +39,7 @@
                 <div class="col-lg-6 text-center">
                     <div class="section-title">
                         <h1>Latest Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et
-                            dolore
-                            magna aliqua.</p>
+                        <p>Semua barang disini dapat anda dapatkan dengan murah</p>
                     </div>
                 </div>
             </div>
