@@ -93,6 +93,11 @@ class DistributorController extends Controller
             return redirect()->back();
         }
     }
+    public function detail($id)
+    {
+        $distributor = Distributors::findOrFail($id);
+        return view('pages.admin.distributor.detail', compact('distributor'));
+    }
 
     public function delete($id)
     {

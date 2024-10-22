@@ -52,6 +52,7 @@ Route::group(['middleware' => 'admin'], function () {
     // Distributor edit & update
     Route::get('/distributor/edit/{id}', [DistributorController::class, 'edit'])->name('distributor.edit');
     Route::post('/distributor/update/{id}', [DistributorController::class, 'update'])->name('distributor.update'); 
+    Route::get('/distributor/detail/{id}', [DistributorController::class, 'detail'])->name('distributor.detail'); 
 
     // Distributor delete
     Route::delete('/distributor/delete/{id}', [DistributorController::class, 'delete'])->name('distributor.delete'); 
