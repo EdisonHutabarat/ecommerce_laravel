@@ -35,11 +35,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer text-right">
-                    <a href="{{ route('flashsale.edit', $flashsales->id) }}" class="btn btn-warning">Edit</a>
-                    <a href="{{ route('flashsale.delete', $flashsales->id) }}" class="btn btn-danger"
-                        data-confirm-delete="true">Hapus</a>
-                    <a href="{{ route('admin.flashsale') }}" class="btn btn-secondary">Kembali</a>
+                <div class="card-footer">
+                            <a href="{{ route('admin.flashsale') }}" class="btn btn-primary">Kembali</a>
                 </div>
             </div>
         </section>
